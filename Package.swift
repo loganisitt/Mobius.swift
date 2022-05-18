@@ -24,11 +24,7 @@ let package = Package(
         .target(
             name: "MobiusCore",
             dependencies: [
-                .productItem(
-                    name: "CasePaths",
-                    package: "swift-case-paths",
-                    condition: nil
-                )
+                .product(name: "CasePaths", package: "swift-case-paths")
             ],
             path: "MobiusCore/Source"
         ),
