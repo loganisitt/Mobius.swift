@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 import PackageDescription
 
 let package = Package(
@@ -21,7 +21,7 @@ let package = Package(
         .package(url: "https://github.com/Quick/Quick", from: "4.0.0"),
     ],
     targets: [
-        .target(name: "MobiusCore", dependencies: [.product(name: "CasePaths", package: "swift-case-paths")], path: "MobiusCore/Source"),
+        .target(name: "MobiusCore", dependencies: ["CasePaths"], path: "MobiusCore/Source"),
         .target(name: "MobiusExtras", dependencies: ["MobiusCore"], path: "MobiusExtras/Source"),
         .target(name: "MobiusNimble", dependencies: ["MobiusCore", "MobiusTest", "Nimble"], path: "MobiusNimble/Source"),
         .target(name: "MobiusTest", dependencies: ["MobiusCore"], path: "MobiusTest/Source"),
