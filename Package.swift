@@ -21,7 +21,17 @@ let package = Package(
         .package(url: "https://github.com/Quick/Quick", from: "4.0.0"),
     ],
     targets: [
-        .target(name: "MobiusCore", dependencies: ["swift-case-paths"], path: "MobiusCore/Source"),
+        .target(
+            name: "MobiusCore",
+            dependencies: [
+                .productItem(
+                    name: "CasePaths",
+                    package: "swift-case-paths",
+                    condition: nil
+                )
+            ],
+            path: "MobiusCore/Source"
+        ),
         .target(name: "MobiusExtras", dependencies: ["MobiusCore"], path: "MobiusExtras/Source"),
         .target(name: "MobiusNimble", dependencies: ["MobiusCore", "MobiusTest", "Nimble"], path: "MobiusNimble/Source"),
         .target(name: "MobiusTest", dependencies: ["MobiusCore"], path: "MobiusTest/Source"),
