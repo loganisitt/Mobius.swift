@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.7.1
 import PackageDescription
 
 let package = Package(
@@ -39,6 +39,5 @@ let package = Package(
         ),
         .testTarget(name: "MobiusNimbleTests", dependencies: ["MobiusNimble", "Quick"], path: "MobiusNimble/Test"),
         .testTarget(name: "MobiusTestTests", dependencies: ["MobiusTest", "Quick", "Nimble"], path: "MobiusTest/Test"),
-    ],
-    swiftLanguageVersions: [.v5]
+    ]
 )
